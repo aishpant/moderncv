@@ -1,40 +1,39 @@
-\documentclass[11pt,a4paper,sans]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
+\documentclass[10pt,a4paper,sans,unicode]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
 
 \moderncvstyle{classic} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
-\moderncvcolor{purple} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+\moderncvcolor{blue} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
 %\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
-%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
 
 % Avoid hyphenating words, paragraphs look a lot neater
 \usepackage[none]{hyphenat}
+\usepackage{soul}
 
-\usepackage[scale=.80]{geometry} % Reduce document margins
-%\setlength{\hintscolumnwidth}{3cm} % Uncomment to change the width of the dates
+\usepackage{hyperref}
+
+\usepackage[scale= 0.9]{geometry} % Reduce document margins
+\setlength{\hintscolumnwidth}{2cm} % Uncomment to change the width of the dates
 %column
-%\setlength{\makecvtitlenamewidth}{10cm} % For the 'classic' style, uncomment to
+\setlength{\makecvtitlenamewidth}{10cm} % For the 'classic' style, uncomment to
 %adjust the width of the space allocated to your name
 
 % personal data
-\name{Aishwarya Pant}{}
-\address{London, United Kingdom}{}
-\social[linkedin]{aishpant}
-\social[twitter]{aishpant}
-\social[github]{aishpant}
-\email{aishpant@gmail.com}
-\homepage{aishpant.dev}    
-\extrainfo{Updated on \today}
-    
+\name{Aishwarya Pant}{} \social[linkedin]{aishpant}
+\social[twitter]{aishpant} \social[github]{aishpant}
+\email{aishpant@gmail.com} \homepage{aishpant.dev}
+
+
 \begin{document}
-
 \makecvtitle
-
+\vspace{-9mm}
 %----------------------------------------------------------------------------------------
 %	ABOUT
 %----------------------------------------------------------------------------------------
 
 
 \section{About}
-\cvitem{}{A strong individual contributor with experience in leading the design and implementation of technical features. I advocate for quality, testing and user experience.}
+\cvitem{}{A strong individual contributor with experience leading the design and implementation of technical features.\newline{}
+I advocate for quality, testing and user experience.}
 
 
 %----------------------------------------------------------------------------------------
@@ -42,60 +41,45 @@
 %----------------------------------------------------------------------------------------
 
 \section{Work Experience}
-\cventry{August 2018 - Present}{Backend Engineer}{\textsc{Monzo Bank Limited}}{}{London}{\textnormal{Monzo is an online bank with 4 million customers, where I work in a Financial Crime team responsible for automation of risky procedures.
-\vspace{1mm}
+\cventry{Aug 2018 -- Present}{Backend Engineer}{\textsc{Monzo Bank}}{}{London}{\textnormal{Writing microservices in Go to implement innovative new features and to protect Monzo’s 4 million customers from financial crime.
+\vspace{2mm}
 \begin{itemize}
-    \item Automated account defunds: \\
-    Designed and implemented decision systems for determining if it is safe to automatically defund a blocked customers' account. Defunds are critical piece of infrastructure subject to complex regulation; correctness and robustness is essential. I wrote extensive unit tests and acceptance tests for validating the correctness and to make future refactors easier. Almost 50\% of all fincrime defunds were automated, which saved hundreds of hours per week in operational work. Till date, this system has moved over 2 million pounds.
-    \vspace{1mm}
-    \item Improved user experience for blocked users: \\
-    Built a new extensible flow for customers whose accounts are temporarily blocked. This system was built to make it easy to view and debug the activity of a blocked user, and is expected to reduce complaints and inbound chats and calls.
-    \vspace{1mm}
-    \item Multi party authorisation: \\
-    Added support for making manual account defunds asynchronous. It's a safety critical control that helps ensure that operations at Monzo are safe, meeting the high expectation of our customers and regulators.
-\end{itemize}
-\vspace{1mm}
- I also have experience of building APIs in product focused teams:
-\vspace{1mm}
-\begin{itemize}
-    \item Built core banking features like financial account summary and payee accounts.
-    \vspace{1mm}
-    \item Collaborated with external partners to integrate energy switching, contents insurance and a remortgaging service within the Monzo app. Since its launch in 2019, energy switching has generated a revenue of over £500,000.
+    \item \textbf{Designed and implemented decision systems} for automating defunds to blocked customers' account. Defunds are critical piece of infrastructure subject to complex regulation; correctness and robustness is essential. I wrote \textbf{extensive unit tests and acceptance tests} for validating correctness and to make future refactors easier. Nearly 50\% of all fincrime defunds were automated, which saved hundreds of hours per week in operational work. To date, this system has moved over 2 million pounds.
+    \vspace{2mm}
+    \item Implemented asynchronous \textbf{multi party authorisation} for manual account defunds, simplifying the operational work for our internal staff while ensuring that safety critical operations are secure.
+    \vspace{2mm}
+    \item Built an \textbf{improved user experience} for customers whose accounts are temporarily blocked as well as those who would be off-boarded from Monzo.
+    \vspace{2mm}
+    \item Built \textbf{core banking features} like \href{https://monzo.com/blog/2018/11/20/flexible-budgeting}{\ul{financial account summary}} and payee accounts.
+    \vspace{2mm}
+    \item Owned integration of \href{https://monzo.com/blog/2019/05/08/switch-energy-supplier-through-monzo}{\ul{energy switching}}, contents insurance and a remortgaging service within the Monzo app. This involved \textbf{collaborating with external partners} on designing the product, defining API specifications and writing documentation. Since its launch in 2019, energy switching has generated a revenue of over £500,000.
+    \vspace{2mm}
+    \item Wrote clear \textbf{technical proposals} for all the projects I worked on, added monitoring and alerts for key services and participated in specialist on-call rotation.
 \end{itemize}
 }}
-
 \vspace{3mm}
 
 \cventry{Dec 2017 --
-March 2018}{Outreachy Intern}{\textsc{Linux
-Kernel}}{}{Remote}{\textnormal{Outreachy is a three-month internship programme
-to get more underrepresented people to work on Free \& Open Source Software
-(FOSS). I wrote a library using python \& coccinelle scripts, to improve
-attribute documentation for the Linux Kernel. This library - abi2doc is available on PyPI (\url{https://pypi.python.org/pypi/abi2doc}) and the code is on GitHub (\url{https://github.com/aishpant/attribute-documentation}).
-\vspace{1mm}
+Mar 2018}{Outreachy Intern}{\textsc{Linux
+Kernel}}{}{Remote}{\textnormal{Wrote a library using python and coccinelle scripts, to improve attribute documentation for the Linux Kernel. This library - abi2doc is available on PyPI and the code is on  \href{https://github.com/aishpant/attribute-documentation}{\ul{GitHub}}.
+\vspace{2mm}    
 \begin{itemize}
-	\item I wrote an extended description of the project here - \url
-		{https://aishpant.github.io/blog/attribute-documentation/}
-		\vspace{1mm}
-	\item A list of patches I have submitted to the Linux Kernel-
-		\url{https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/log/?qt=grep&q=Aishwarya+Pant}.
-		\vspace{1mm}
-        \item Using abi2doc, I added documentation for \textbf{312} sysfs attributes.
+        \item Added documentation for \textbf{312} sysfs attributes, and wrote an extended description of the project on my \href{https://aishpant.github.io/blog/attribute-documentation}{\ul{blog}}.
+        \vspace{2mm}
+        \item \href{https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/log/?qt=grep&q=Aishwarya+Pant}{\ul{Link}} to list of patches submitted to the Linux Kernel.
 \end{itemize}
 }}
-
 \vspace{3mm}
 
-\cventry{July 2015 - Nov 2017}{Software Development Engineer}{\textsc{Flipkart}}{}{Bengaluru}{\textnormal{Flipkart is one of the largest e-commerce companies in India, with 10 million monthly active users. I primarily worked in the supply chain division of Flipkart.
-\vspace{1mm}
+\cventry{July 2015 -- Nov 2017}{Software Development Engineer}{\textsc{Flipkart}}{}{Bengaluru}{\textnormal{Flipkart is one of the largest e-commerce companies in India, with 10 million monthly active users. I primarily worked in the supply chain division of Flipkart.
+\vspace{2mm}
 \begin{itemize}
 	\item Highlights have
-been building a user interface (based on  ReactJS) for use in transportation
-hubs and writing a new sortation service (based on a Java Dropwizard
-framework) for use in shipment sortation hubs.
-\vspace{1mm}
+been building a user interface in ReactJS for use in transportation
+hubs and writing a new sortation service in Java for use in shipment sortation hubs.
+\vspace{2mm}
         \item I also worked for 6 months with the Merchandisation
-\& Monetisation team, onboarding new widgets on the landing \& category pages.
+\& Monetisation team, on-boarding new widgets on the landing \& category pages.
 \end{itemize}
 }}
 
@@ -104,18 +88,15 @@ framework) for use in shipment sortation hubs.
 %----------------------------------------------------------------------------------------
 
 \section{Education}
-\cventry{2011--2015}{Indraprastha Institute of Information Technology, Delhi \url{https://iiitd.ac.in/}}{B.Tech GPA 8.82}{}{\textit{Computer Science}}{}
+\cventry{2011--2015}{Indraprastha Institute of Information Technology, Delhi}{B.Tech GPA 8.82}{}{\textit{Computer Science}}{}
 
 %----------------------------------------------------------------------------------------
 %	SKILLS
 %----------------------------------------------------------------------------------------
 
-\section{Programming}
-\cvitem{}{\textnormal{Proficient in Go.}}
-\cvitem{}{\textnormal{Comfortable with Python, Java, Coccinelle.}}
-
-\section{Software}
-\cvitem{}{\textnormal{SQL, NSQ, Cassandra, Prometheus, Linux, Git}}
+\section{Skills}
+\cvitem{}{\textnormal{Proficient in Go; comfortable with Python, Java, Coccinelle.}}
+\cvitem{}{\textnormal{Knowledge of SQL, NSQ, Cassandra, Prometheus, Linux, Git}}
 
 %----------------------------------------------------------------------------------------
 %	PUBLICATIONS
@@ -124,9 +105,7 @@ framework) for use in shipment sortation hubs.
 \section{Publications}
 \cventry{2015}{Understanding Thermal Face Detection: Challenges and
 Evaluation}{\textsc{Book chapter in "Face Recognition Across the
-Electromagnetic Spectrum"}}{}{}{\textnormal{Book Editor Thirimachos Bourlai,
-Springer.
-Authors: Janhavi Agrawal, Aishwarya Pant, Tejas Dhamecha, Richa Singh,
+Electromagnetic Spectrum"}}{}{}{\textnormal{Authors: Janhavi Agrawal, Aishwarya Pant, Tejas Dhamecha, Richa Singh,
 Mayank Vatsa}}
 
 %----------------------------------------------------------------------------------------
@@ -134,10 +113,7 @@ Mayank Vatsa}}
 %----------------------------------------------------------------------------------------
 
 \section{Talks and Awards}
-\cvitem{}{Participated in Outreachy panel at Open Source Summit EU 2018}
-\cvitem{}{Awarded scholarship to attend KubeCon + CloudNativeCon Europe 2018}
+\cvitem{}{Participated in the \href{https://osseu18.sched.com/event/FxYp/panel-discussion-outreachy-linux-kernel-internship-report-moderated-by-julia-lawall-inria}{\ul{Outreachy panel}} at Open Source Summit EU 2018.}
+\cvitem{}{Awarded scholarship to attend KubeCon + CloudNativeCon Europe 2018.}
 
 \end{document}
-
-\end{document}
-
